@@ -51,7 +51,6 @@ const Input = styled.input`
 
 class state extends Component {
   render() {
-    console.log(this.props);
     return (
       <Container>
         <Wrapper>
