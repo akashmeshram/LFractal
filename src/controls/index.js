@@ -3,16 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import { 
-  addFactor,
-  addAxiom,
-  addRule1,
-  addRule2,
-  addStartx,
-  addStarty,
-  addIteration,
-  addLength,
-  addAngle,
-  addTickness,
+  addControl,
   controlError,
 } from '../store/actions';
 
@@ -60,47 +51,48 @@ const Input = styled.input`
 
 class state extends Component {
   render() {
+    console.log(this.props);
     return (
       <Container>
         <Wrapper>
           Factor : 
-          <Input name = "factor" {...this.props.factor} onChange={(e) => this.props.addFactor(e.target.value)}/>
+          <Input name = "factor" {...this.props.factor} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
         <Wrapper>
           Axiom : 
-          <Input name = "axiom" {...this.props.axiom} onChange={(e) => this.props.addAxiom(e.target.value)}/>
+          <Input name = "axiom" {...this.props.axiom} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
         <Wrapper>
           Rule 1: 
-          <Input name = "rule1" {...this.props.rule1} onChange={(e) => this.props.addRule1(e.target.value)}/>
+          <Input name = "rule1" {...this.props.rule1} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
         <Wrapper>
           Rule 2 : 
-          <Input name = "rule2" {...this.props.rule2} onChange={(e) => this.props.addRule2(e.target.value)}/>
+          <Input name = "rule2" {...this.props.rule2} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
         <Wrapper>
           StartX : 
-          <Input name = "startx" {...this.props.startx} onChange={(e) => this.props.addStartx(e.target.value)}/>
+          <Input name = "startx" {...this.props.startx} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
         <Wrapper>
           StartY : 
-          <Input name = "starty" {...this.props.starty} onChange={(e) => this.props.addStarty(e.target.value)}/>
+          <Input name = "starty" {...this.props.starty} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
         <Wrapper>
           Length : 
-          <Input name = "len" {...this.props.len} onChange={(e) => this.props.addLength(e.target.value)}/>
+          <Input name = "len" {...this.props.len} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
         <Wrapper>
           Angle : 
-          <Input name = "angle" {...this.props.angle} onChange={(e) => this.props.addAngle(e.target.value)}/>
+          <Input name = "angle" {...this.props.angle} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
         <Wrapper>
           Thickness : 
-          <Input name = "thickness" {...this.props.thickness} onChange={(e) => this.props.addTickness(e.target.value)}/>
+          <Input name = "thickness" {...this.props.thickness} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
         <Wrapper>
           Iteration : 
-          <Input name = "iteration" {...this.props.iterations} onChange={(e) => this.props.addIteration(e.target.value)}/>
+          <Input name = "iterations" {...this.props.iterations} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
         </Wrapper>
       </Container>
     );
@@ -124,15 +116,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  addFactor,
-  addAxiom,
-  addRule1,
-  addRule2,
-  addStartx,
-  addStarty,
-  addIteration,
-  addLength,
-  addAngle,
-  addTickness,
+  addControl,
   controlError,
 })(state);
