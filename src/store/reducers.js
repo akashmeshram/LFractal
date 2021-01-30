@@ -1,14 +1,5 @@
 import { 
-  ADD_FACTOR, 
-  ADD_AXIOM,  
-  ADD_RULE1,
-  ADD_RULE2,  
-  ADD_STARTX,  
-  ADD_STARTY,  
-  ADD_ITERATION,
-  ADD_LENGTH, 
-  ADD_ANGLE, 
-  ADD_TICKNESS, 
+  ADD_CONTROLE, 
   ADD_CONTROLE_FAILED,
   ADD_ALL_CONTROLS 
 } from './types';
@@ -43,26 +34,8 @@ let initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_FACTOR :
-      return {...state, factor : {...state.factor, value : action.payload }};
-    case ADD_AXIOM :
-      return {...state, axiom : {...state.axiom, value : action.payload }};
-    case ADD_RULE1 :
-      return {...state, rule1 : {...state.rule1, value : action.payload }};
-    case ADD_RULE2 :
-      return {...state, rule2 : {...state.rule2, value : action.payload }};
-    case ADD_STARTX :
-      return {...state, startx : {...state.startx, value : action.payload }};
-    case ADD_STARTY :
-      return {...state, starty : {...state.starty, value : action.payload }};
-    case ADD_ITERATION :
-      return {...state, iterations : {...state.iterations, value : action.payload }};
-    case ADD_LENGTH :
-      return {...state, len : {...state.len, value : action.payload }};
-    case ADD_ANGLE :
-      return {...state, angle : {...state.angle, value : action.payload }};
-    case ADD_TICKNESS :
-      return {...state, thickness : {...state.thickness, value : action.payload }};
+    case ADD_CONTROLE :
+      return {...state, [action.payload.tag] : {...state[action.payload.tag], value : action.payload.value }};
     case ADD_CONTROLE_FAILED :
       return {...state, error : action.payload.error };
     case ADD_ALL_CONTROLS :
