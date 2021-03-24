@@ -12,7 +12,7 @@ const Container = styled.div`
   height: auto;
   width: 260px;
   text-transform: uppercase; 
-  opacity: 0.63;
+  opacity: 0.83;
   background: linear-gradient(to bottom, #FB404B 0%, #bb0502 100%);
   background-size: 150% 150%;
   flex-grow: 1;
@@ -20,23 +20,33 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Source Code Pro', monospace;
 `
 
 const Button = styled.button`
-  padding:0.35em 1.2em;
-  border:0.1em solid #FFFFFF;
-  margin: 0.5em 0.3em ;
-  border-radius:0.12em;
-  width: 80%;
-  box-sizing: border-box;
-  text-decoration:none;
-  background: transparent;
-  text-align: center;
+  font-family: 'Source Code Pro', monospace;
+  cursor: pointer;
+  letter-spacing: 1px;
+  padding: 4px 20px;
+  font-size: 12px;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1.7em;
+  margin-right: 15px;
+  text-transform: uppercase;
+  border: 1px solid #4C4C4C;
+  color: #4C4C4C;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
   :hover {
-    cursor: pointer;
-    color:#000000;
-    background: #FFFFFF;
+    outline: 0;
+    color: #fff !important;
+    background-color: #1b30fc !important;
+    border: 1px solid #fff !important;
   }
+
 `;
 
 class Patterns extends Component {

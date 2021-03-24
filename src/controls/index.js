@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import Button from './control';
 
 import { 
   addControl,
@@ -19,80 +20,24 @@ const Container = styled.div`
 	opacity: 0.63;
 `
 
-const Wrapper = styled.div`
-  color: #FFFFFF;
-  margin: 5px 15px;
-  padding: 10px 15px;	
-  border-radius: 4px;
-  line-height: 30px;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: left;
-  :hover {
-    background: rgba(255, 255, 255, 0.63);
-    color: black;
-  }
-`;
-
-const Input = styled.input`
-  width: 70%;
-  padding: 6px 12px;
-  border: 1px solid #fff;
-  color: #fff;
-  background: transparent;
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-  :hover {
-    border-color: #000;
-    color: #000;
-  }
-`;
 
 class state extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      labels : ["Factor", "Axiom", "Rule 1", "Rule 2", "Start X", "Start Y", "Len", "Angle", "Thickness", "Iterations"]
+    }
+  }
+
   render() {
+    const allLables = this.state.labels.map(val => {
+      const name = val.replaceAll(' ', '').toLowerCase();
+      return <Button key = {name} name = {name} label={val} data = {this.props[name]} changeHandler = {this.props.addControl}/>;
+    });
     return (
       <Container>
-        <Wrapper>
-          Factor : 
-          <Input name = "factor" {...this.props.factor} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
-        <Wrapper>
-          Axiom : 
-          <Input name = "axiom" {...this.props.axiom} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
-        <Wrapper>
-          Rule 1: 
-          <Input name = "rule1" {...this.props.rule1} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
-        <Wrapper>
-          Rule 2 : 
-          <Input name = "rule2" {...this.props.rule2} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
-        <Wrapper>
-          StartX : 
-          <Input name = "startx" {...this.props.startx} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
-        <Wrapper>
-          StartY : 
-          <Input name = "starty" {...this.props.starty} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
-        <Wrapper>
-          Length : 
-          <Input name = "len" {...this.props.len} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
-        <Wrapper>
-          Angle : 
-          <Input name = "angle" {...this.props.angle} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
-        <Wrapper>
-          Thickness : 
-          <Input name = "thickness" {...this.props.thickness} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
-        <Wrapper>
-          Iteration : 
-          <Input name = "iterations" {...this.props.iterations} onChange={(e) => this.props.addControl(e.target.name, e.target.value)}/>
-        </Wrapper>
+        {allLables}
       </Container>
     );
   }

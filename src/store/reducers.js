@@ -35,9 +35,18 @@ let initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_CONTROLE :
-      return {...state, [action.payload.tag] : {...state[action.payload.tag], value : action.payload.value }};
+      return {
+        ...state, 
+        [action.payload.tag] : {
+          ...state[action.payload.tag], 
+          value : action.payload.value 
+        }
+      };
     case ADD_CONTROLE_FAILED :
-      return {...state, error : action.payload.error };
+      return {
+        ...state, 
+        error : action.payload.error 
+      };
     case ADD_ALL_CONTROLS :
       return {
         ...state,
