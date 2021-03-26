@@ -1,4 +1,4 @@
-import Lsystem from "./lsystem";
+import Lsystem from "./Lsystem";
 import store from "../store";
 
 const Board = (width, height) => {

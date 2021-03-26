@@ -1,47 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Button from "./control";
+import { changeControl, controlError } from "../store/actions";
 
-import { addControl, controlError } from "../store/actions";
-
-import tw from "twin.macro";
-import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
-import { ReactComponent as ArrowLeftIcon } from "./Arrows/arrow-left-3-icon.svg";
-import { ReactComponent as ArrowRightIcon } from "./Arrows/arrow-right-3-icon.svg";
-
-const Container = styled.div`
-  ${tw`w-full h-full max-w-sm flex flex-col px-6 sm:px-10 lg:px-6 py-10 justify-between shadow-raised bg-primary text-gray-100 relative overflow-y-auto opacity-75`}
-  h2 {
-    ${tw`text-3xl sm:text-4xl font-bold`}
-  }
-  h3 {
-    ${tw`text-xl sm:text-2xl font-bold`}
-  }
-  h4 {
-    ${tw`mx-3 h-4 text-3xl`}
-  }
-  input {
-    ${tw`w-full bg-transparent text-gray-100 text-base font-medium tracking-wide border-b-2 py-2 text-gray-100 hocus:border-pink-400 focus:outline-none`};
-
-    ::placeholder {
-      ${tw`text-gray-500`}
-    }
-  }
-`;
-
-const Controls = styled.div`
-  ${tw`mx-auto flex py-5 mt-6`}
-`;
-const ControlButton = styled.button`
-  ${tw`mx-3 p-4 rounded-full bg-gray-200 hover:bg-gray-300 text-primary hover:text-secondary focus:outline-none focus:shadow-outline`}
-  svg {
-    ${tw`w-4 h-4 stroke-3`}
-  }
-`;
-
-const SubContainer = tw.div`flex flex-col`;
-const RowContainer = tw.div`flex justify-between`;
+import {
+  Container,
+  ContainerLabel,
+  SubContainer,
+  SubContainerLabel,
+  RowContainer,
+  Arrows,
+  ArrowButton,
+  ControlButton,
+  CounterLabel,
+} from "./Components";
+import { ReactComponent as ArrowLeftIcon } from "./Arrows/arrow-left.svg";
+import { ReactComponent as ArrowRightIcon } from "./Arrows/arrow-right.svg";
 
 class state extends Component {
   constructor(props) {
@@ -66,12 +39,12 @@ class state extends Component {
 
   decreaseIter() {
     if (this.props.iterations.value > this.props.iterations.min)
-      this.props.addControl("iterations", this.props.iterations.value - 1);
+      this.props.changeControl("iterations", this.props.iterations.value - 1);
   }
 
   increaseIter() {
     if (this.props.iterations.value < this.props.iterations.max)
-      this.props.addControl("iterations", this.props.iterations.value + 1);
+      this.props.changeControl("iterations", this.props.iterations.value + 1);
   }
 
   render() {
@@ -80,12 +53,12 @@ class state extends Component {
       return {
         ...data,
         [name]: (
-          <Button
+          <ControlButton
             key={name}
             name={name}
             label={val}
             data={this.props[name]}
-            changeHandler={this.props.addControl}
+            changeHandler={this.props.changeControl}
           />
         ),
       };
@@ -93,7 +66,7 @@ class state extends Component {
 
     const RulesComponent = (
       <SubContainer>
-        <h3>L - System Rules</h3>
+        <SubContainerLabel> L - System Rules </SubContainerLabel>
         <RowContainer>
           {allLables["factor"]}
           {allLables["axiom"]}
@@ -107,7 +80,7 @@ class state extends Component {
 
     const PositionsComponent = (
       <SubContainer>
-        <h3>Start Positions</h3>
+        <SubContainerLabel> Start Positions </SubContainerLabel>
         <RowContainer>
           {allLables["startx"]}
           {allLables["starty"]}
@@ -117,7 +90,7 @@ class state extends Component {
 
     const ParametersComponent = (
       <SubContainer>
-        <h3>Parameters</h3>
+        <SubContainerLabel> Parameters </SubContainerLabel>
         <RowContainer>
           {allLables["len"]}
           {allLables["angle"]}
@@ -128,21 +101,21 @@ class state extends Component {
 
     const IterationComponent = (
       <SubContainer>
-        <h3>Iteration</h3>
-        <Controls>
-          <ControlButton onClick={this.decreaseIter}>
+        <SubContainerLabel>Iteration</SubContainerLabel>
+        <Arrows>
+          <ArrowButton onClick={this.decreaseIter}>
             <ArrowLeftIcon />
-          </ControlButton>
-          <h4>{this.props.iterations.value}</h4>
-          <ControlButton onClick={this.increaseIter}>
+          </ArrowButton>
+          <CounterLabel> {this.props.iterations.value} </CounterLabel>
+          <ArrowButton onClick={this.increaseIter}>
             <ArrowRightIcon />
-          </ControlButton>
-        </Controls>
+          </ArrowButton>
+        </Arrows>
       </SubContainer>
     );
     return (
       <Container>
-        <h2>Controls</h2>
+        <ContainerLabel>Controls</ContainerLabel>
         {RulesComponent}
         {PositionsComponent}
         {ParametersComponent}
@@ -169,6 +142,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  addControl,
+  changeControl,
   controlError,
 })(state);

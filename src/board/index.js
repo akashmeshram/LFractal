@@ -4,7 +4,7 @@ import p5 from "p5";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
-import Board from "./board";
+import Board from "./Board";
 
 const BoardContainer = tw.div`w-full mx-auto`;
 
