@@ -1,23 +1,20 @@
-import styled from 'styled-components'
+import "tailwindcss/dist/base.css";
+import "./styles/globalStyles.css";
 
-import Board from './board';
-import Controls from './controls';
-import Patterns from './patterns';
+// import styled from "styled-components";
 
-import img from './background.jpg';
-
-const Container = styled.div`
-  display: flex;
-  background: url(${img});
-`
+import Board from "./board";
+import Controls from "./controls";
+import Patterns from "./patterns";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <Container>
+    <Layout>
       <Controls />
       <Board />
       <Patterns />
-    </Container>
+    </Layout>
   );
 }
 
