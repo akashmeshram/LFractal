@@ -17,8 +17,8 @@ import { ReactComponent as ArrowLeftIcon } from "./Arrows/arrow-left.svg";
 import { ReactComponent as ArrowRightIcon } from "./Arrows/arrow-right.svg";
 
 class state extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       labels: [
         "Factor",
@@ -48,7 +48,7 @@ class state extends Component {
   }
 
   render() {
-    const allLables = this.state.labels.reduce((data, val) => {
+    const allControls = this.state.labels.reduce((data, val) => {
       const name = val.replaceAll(" ", "").toLowerCase();
       return {
         ...data,
@@ -68,12 +68,12 @@ class state extends Component {
       <SubContainer>
         <SubContainerLabel> L - System Rules </SubContainerLabel>
         <RowContainer>
-          {allLables["factor"]}
-          {allLables["axiom"]}
+          {allControls["factor"]}
+          {allControls["axiom"]}
         </RowContainer>
         <RowContainer>
-          {allLables["rule1"]}
-          {allLables["rule2"]}
+          {allControls["rule1"]}
+          {allControls["rule2"]}
         </RowContainer>
       </SubContainer>
     );
@@ -82,8 +82,8 @@ class state extends Component {
       <SubContainer>
         <SubContainerLabel> Start Positions </SubContainerLabel>
         <RowContainer>
-          {allLables["startx"]}
-          {allLables["starty"]}
+          {allControls["startx"]}
+          {allControls["starty"]}
         </RowContainer>
       </SubContainer>
     );
@@ -92,9 +92,9 @@ class state extends Component {
       <SubContainer>
         <SubContainerLabel> Parameters </SubContainerLabel>
         <RowContainer>
-          {allLables["len"]}
-          {allLables["angle"]}
-          {/* {allLables["thickness"]} */}
+          {allControls["len"]}
+          {allControls["angle"]}
+          {allControls["thickness"]}
         </RowContainer>
       </SubContainer>
     );
