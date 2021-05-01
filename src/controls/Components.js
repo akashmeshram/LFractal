@@ -1,6 +1,5 @@
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
 
 // Containers
 export const Container = tw.div`w-full h-full max-w-sm flex flex-col px-6 sm:px-10 lg:px-6 py-10 justify-between shadow-raised bg-primary text-gray-100 relative overflow-y-auto opacity-75`;

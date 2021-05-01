@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import p5 from "p5";
 import tw from "twin.macro";
-import { css } from "styled-components/macro"; //eslint-disable-line
 
 import Board from "./Board";
 

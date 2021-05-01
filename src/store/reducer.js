@@ -11,7 +11,7 @@ let initialState = {
   rule2: { type: "text", value: "X=FX" },
   startx: { type: "number", min: 0, max: 800, step: 25, value: 400 },
   starty: { type: "number", min: 0, max: 800, step: 25, value: 800 },
-  iterations: { type: "number", min: 0, max: 10, step: 1, value: 1 },
+  iterations: { type: "number", min: 1, max: 10, step: 1, value: 1 },
   len: { type: "number", min: 100, max: 60000, step: 50, value: 300 },
   angle: { type: "number", min: 5, max: 150, step: 1, value: 60 },
   thickness: { type: "number", min: 1, max: 5, step: 1, value: 2 },
