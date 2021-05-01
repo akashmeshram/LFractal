@@ -2,7 +2,6 @@ import "tailwindcss/dist/base.css";
 import "./globalStyles.css";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
 
 // Components
 import Board from "./board";
