@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Lfractal
+<p align="center"><img src="https://user-images.githubusercontent.com/30370067/116772719-7cb08600-aa6e-11eb-8311-6c77236feb0e.jpg"></p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##  Table of Contents
+- [About](#about)
+- [Demo](#demo)
+- [Usage](#usage)
+- [Author](#authors)
+- [References](#references)
+- [License](#license)
 
-## Available Scripts
+## About <a name = "about"></a>
+An  L-system is a parallel string rewriting system. A string rewriting system consists of an initial string, called the seed, and a set of rules for specifying how the symbols in a string are rewritten as (replaced by) strings. 
 
-In the project directory, you can run:
+The recursive nature of the L-system rules leads to self-similarity and thereby fractal-like forms which are easy to describe with an L-system. Plant models and natural-looking organic forms 'grow' and becomes more complex by increasing the iteration level of the form.
 
-### `yarn start`
+<!-- ## Demo <a name = "demo"></a> -->
+<!-- <p align="center"><img src="./lsystem.gif"></p> -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage <a name = "usage"></a>
+Following character have geometric interpretation.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+|Character  |      Meaning|
+| ------------- |:-------------:| 
+|   F	      |     Move forward by line length drawing a line|
+|   f	      |     Move forward by line length without drawing a line|
+|   +	      |     Turn left by turning angle|
+|   -	      |     Turn right by turning angle|
+|   \|	      |     Reverse direction (ie: turn by 180 degrees)|
+|   \[       |      Push current drawing state onto stack|
+|   \]	      |     Pop current drawing state from the stack|
+  
+Change the following parameters to get different systems
 
-### `yarn test`
+|Parameters| Meaning|
+| ------------- |:-------------:| 
+| `AXIOM`  | initial string |
+| `RULES`  | rewriting rule|
+| `STARTX` | canvas starting width position|
+| `STARTY` | canvas starting height position|
+| `LENGTH` | step size|
+| `ANGLE`  | degree of direction change|
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then increase (or decrease) `ITERATIONS` to get next iteration
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Author <a name = "authors"></a>
+- [Akash Meshram](https://github.com/akashmeshram) 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## References <a name = "references"></a>
+- Grzegorz Rozenberg and Arto Salomaa. The mathematical theory of L systems (Academic Press, New York, 1980).
+- Przemysław Prusinkiewicz, Aristid Lindenmayer – The Algorithmic Beauty of Plants.
+- Kari, Lila; Rozenberg, Grzegorz; Salomaa, Arto (1997). "L Systems".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License <a name = "license"></a>
+Copyright © 2021 [Akash Meshram](https://github.com/akashmeshram).<br />
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
