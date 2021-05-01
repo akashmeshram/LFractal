@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/LFractal/static/css/main.969eacd7.chunk.css",
+    "main.js": "/LFractal/static/js/main.aa66a040.chunk.js",
+    "main.js.map": "/LFractal/static/js/main.aa66a040.chunk.js.map",
+    "runtime-main.js": "/LFractal/static/js/runtime-main.ad146e85.js",
+    "runtime-main.js.map": "/LFractal/static/js/runtime-main.ad146e85.js.map",
+    "static/css/2.a8032856.chunk.css": "/LFractal/static/css/2.a8032856.chunk.css",
+    "static/js/2.b085d89b.chunk.js": "/LFractal/static/js/2.b085d89b.chunk.js",
+    "static/js/2.b085d89b.chunk.js.map": "/LFractal/static/js/2.b085d89b.chunk.js.map",
+    "index.html": "/LFractal/index.html",
+    "static/css/2.a8032856.chunk.css.map": "/LFractal/static/css/2.a8032856.chunk.css.map",
+    "static/css/main.969eacd7.chunk.css.map": "/LFractal/static/css/main.969eacd7.chunk.css.map",
+    "static/js/2.b085d89b.chunk.js.LICENSE.txt": "/LFractal/static/js/2.b085d89b.chunk.js.LICENSE.txt",
+    "static/media/arrow-left.087294c1.svg": "/LFractal/static/media/arrow-left.087294c1.svg",
+    "static/media/arrow-right.5bf13393.svg": "/LFractal/static/media/arrow-right.5bf13393.svg",
+    "static/media/data.6189de08.yml": "/LFractal/static/media/data.6189de08.yml"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad146e85.js",
+    "static/css/2.a8032856.chunk.css",
+    "static/js/2.b085d89b.chunk.js",
+    "static/css/main.969eacd7.chunk.css",
+    "static/js/main.aa66a040.chunk.js"
+  ]
+}
