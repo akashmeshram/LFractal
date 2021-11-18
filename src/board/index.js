@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import p5 from "p5";
 import tw from "twin.macro";
 
-import Board from "./Board";
+import Board from "./board";
 
 const BoardContainer = tw.div`w-full mx-auto`;
 
